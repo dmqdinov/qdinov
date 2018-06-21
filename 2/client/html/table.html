@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<head>
+  <link rel="stylesheet" href="../css/mainStyle.css" />
+  <link rel="stylesheet" href="../css/tableStyle.css" />
+</head>
+
+<body>
+  <label> Time Update:
+    <label name="min"></label>
+  <input type="range" name="range" step="1" id="slider-time" oninput=";">
+  <label name="max"></label>
+  </label>
+  <br>
+  <label> Americas <input type = "checkbox" name = "checkbox" value = "Americas" title = "Americas" > </input></label>
+  <label> Africa <input type = "checkbox" name = "checkbox" value = "Africa" title = "Africa" > </input></label>
+  <label> Asia <input type = "checkbox" name = "checkbox" value = "Asia" title = "Asia"> </input></label>
+  <label> Europe <input type = "checkbox" name = "checkbox" value = "Europe" title = "Europe" > </input></label>
+  <label> Oceania <input type = "checkbox" name = "checkbox" value = "Oceania" title = "Oceania"> </input></label>
+
+  <br>
+  <label> Aggregation: </label>
+  <label> None <input type = "radio" name = "radio" value = "None" checked></input></label>
+  <label> by Continents <input type = "radio" name = "radio" value = "by Continents"></input></label>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="../js/mainAction.js"></script>
+  <script src="../js/tableAction.js"></script>
+  <script>
+    //d3.json("../../server/countries_1995_2012.json", function(error, data) {
+    d3.json("http://localhost:8080/", function(error, data) {
+
+      init(data);
+
+    });
+  </script>
+</body>
+
+</html>
